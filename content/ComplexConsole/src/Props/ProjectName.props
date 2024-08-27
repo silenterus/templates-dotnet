@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<Project Sdk="Microsoft.NET.Sdk">-->
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+
+  <PropertyGroup>
+    <Description>ProjectDescription</Description>
+    <Copyright>AuthorName</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Authors>AuthorName</Authors>
+    <PackageTags>ProjectTags</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>ProjectName.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/GitHubUser/ProjectName</PackageProjectUrl>
+    <PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnablePackageValidation>true</EnablePackageValidation>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <RepositoryUrl>https://github.com/GitHubUser/ProjectName</RepositoryUrl>
+
+
+
+  </PropertyGroup>
+
+
+
+
+
+  <ItemGroup>
+    <None Visible="false" Include="$(MSBuildThisFileDirectory)../../assets/ProjectName.ico" Pack="true" PackagePath="/" />
+    <None Visible="false" Include="$(MSBuildThisFileDirectory)../../assets/ProjectName.png" Pack="true" PackagePath="/" />
+    <None Visible="false" Include="$(MSBuildThisFileDirectory)../../README.md" Pack="true" PackagePath="/" />
+    <None Visible="false" Include="$(MSBuildThisFileDirectory)../../CHANGELOG.md" Pack="true" PackagePath="/" />
+
+  </ItemGroup>
+
+
+
+
+
+  <ItemGroup>
+
+    <PackageReference Include="MinVer" Version="6.0.0-rc.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Roslynator.Analyzers" Version="4.12.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0-beta1.24324.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.12.0-1.final" PrivateAssets="all" />
+  </ItemGroup>
+
+
+
+</Project>

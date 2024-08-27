@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\Props\ProjectName.props" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <PackageId>ProjectName</PackageId>
+    <RuntimeIdentifiers>win-x64;win-x86;linux-x64;linux-arm;linux-arm64;osx-x64;osx-arm64;ios-arm64;android-arm64;win-arm64;linux-bionic-arm64</RuntimeIdentifiers>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+
+
+
+    <LangVersion>latestmajor</LangVersion>
+    <Title>ProjectName</Title>
+    <ApplicationIcon>..\..\assets\ProjectName.ico</ApplicationIcon>
+    <PackageIcon>ProjectName.png</PackageIcon>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Visible="false" Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Visible="false" Include="..\..\assets\ProjectName.png" Pack="true" PackagePath="\" />
+    <None Visible="false" Include="..\..\assets\ProjectName.ico" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\$(TargetFramework)\win-x64\publish\**\*.*" Pack="true" PackagePath="tools\win-x64\" Condition="Exists('bin\Release\$(TargetFramework)\win-x64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\win-x86\publish\**\*.*" Pack="true" PackagePath="tools\win-x86\" Condition="Exists('bin\Release\$(TargetFramework)\win-x86\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\linux-x64\publish\**\*.*" Pack="true" PackagePath="tools\linux-x64\" Condition="Exists('bin\Release\$(TargetFramework)\linux-x64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\linux-arm\publish\**\*.*" Pack="true" PackagePath="tools\linux-arm\" Condition="Exists('bin\Release\$(TargetFramework)\linux-arm\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\linux-arm64\publish\**\*.*" Pack="true" PackagePath="tools\linux-arm64\" Condition="Exists('bin\Release\$(TargetFramework)\linux-arm64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\osx-x64\publish\**\*.*" Pack="true" PackagePath="tools\osx-x64\" Condition="Exists('bin\Release\$(TargetFramework)\osx-x64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\osx-arm64\publish\**\*.*" Pack="true" PackagePath="tools\osx-arm64\" Condition="Exists('bin\Release\$(TargetFramework)\osx-arm64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\win-arm64\publish\**\*.*" Pack="true" PackagePath="tools\win-arm64\" Condition="Exists('bin\Release\$(TargetFramework)\win-arm64\publish\')" />
+    <None Include="bin\Release\$(TargetFramework)\linux-bionic-arm64\publish\**\*.*" Pack="true" PackagePath="tools\linux-bionic-arm64\" Condition="Exists('bin\Release\$(TargetFramework)\linux-bionic-arm64\publish\')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectName.Data\ProjectName.Data.csproj" />
+    <ProjectReference Include="..\ProjectName.Extensions\ProjectName.Extensions.csproj" />
+    <ProjectReference Include="..\ProjectName.Core\ProjectName.Core.csproj" />
+  </ItemGroup>
+
+</Project>

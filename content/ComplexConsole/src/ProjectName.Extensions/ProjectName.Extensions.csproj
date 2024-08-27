@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\Props\ProjectName.props" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <PackageId>ProjectName.Extensions</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectName.Data\ProjectName.Data.csproj" />
+  </ItemGroup>
+
+</Project>

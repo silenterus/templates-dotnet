@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Harold-Andreas Zellner",
+  "classifications": [".NET Project", "Omni", "Console Project"],
+  "name": ".NET Advanced Decoupled Console Library Project with ",
+  "precedence": "100",
+  "description": "A complete Console App Solution with Cli/Core/Data/Extensions/Signed/Tests respectively.",
+  "groupIdentity": "TOMS.NET",
+  "identity": "TOMS.NET.default",
+  "shortName": "toms-console",
+  "defaultName": "TOMSLibrary",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "ProjectName",
+  "preferNameDirectory": true,
+  "guids": [
+    "BC79BA4C-F502-4AB8-9726-75C064AD3B3A",
+    "2BAB8DFE-20AE-4338-80E0-04C8270DE858"
+  ],
+  "sources": [
+    {
+      "source": "./"
+    }
+  ],
+  "primaryOutputs": [
+    { "path": "ProjectName.sln" }
+  ],
+  "postActions": [
+    {
+      "description ": "init docs of the project by calling releaser\\first_init.cmd",
+      "manualInstructions": [
+        { "text": "Run 'cmd.exe /c releaser\\first_init.cmd'" }
+      ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "cmd.exe",
+        "args": "/c powershell -ExecutionPolicy Bypass -Command \"& .\\releaser\\Init.ps1 -d\"",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
+      },
+      "isPrimary": true,
+      "continueOnError": false
+    }
+  ],
+  "symbols": {
+    "dotnet-version": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "8.0",
+      "replaces": "DotNETVersion",
+      "description": "The default .NET version used for the library and tests."
+    },
+    "desc": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "This is a default project description",
+      "replaces": "ProjectDescription",
+      "description": "The description of the project."
+    },
+    "tags": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "FirstTag;SecondTag",
+      "replaces": "ProjectTags",
+      "description": "The list of project tags for the NuGet package."
+    },
+    "author": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "Harold-Andreas Zellner",
+      "replaces": "AuthorName",
+      "description": "The author name."
+    },
+    "git-user": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "silenterus",
+      "replaces": "GitHubUser",
+      "description": "The GitHub user name."
+    },
+    "url": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "https://silenterus.github.io/OmniTool",
+      "replaces": "UserHomeUrl",
+      "description": "Your website URL."
+    },
+    "git-token": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "ProjectGithubToken",
+      "description": "Your github token for publishing the release"
+    },
+
+    "nuget-token": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "ProjectNugetToken",
+      "description": "Your nuget token for publishing a package"
+    },
+
+    "icon": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "ProjectApplicationIcon",
+      "description": "Your icon as url/file for publishing a package"
+    },
+    "version": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "0.0.0.1",
+      "replaces": "ProjectApplicationVersion",
+      "description": "The default .NET version used for the library and tests."
+    },
+    "exe-name": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "ProjectApplicationExeName",
+      "description": "The default .NET version used for the library and tests."
+    },
+    "docs": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "replaces": "CreateWriterSideDocs",
+      "description": "The default .NET version used for the library and tests."
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!CreateWriterSideDocs)",
+          "exclude": [
+            "docs/*"
+          ]
+        }
+      ]
+    }
+  ]
+}

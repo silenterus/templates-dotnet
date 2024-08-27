@@ -19,11 +19,6 @@
 # Mono auto generated files
 mono_crash.*
 
-[Bb]uild/
-[Bb]uilds/
-[Rr]eleaser/
-[Ee]xamples/
-[Pp]lay[Gg]round/
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
